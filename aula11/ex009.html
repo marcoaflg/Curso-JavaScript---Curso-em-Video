@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual é o seu país de origem?</title>
+</head>
+
+<body>
+    <h1>País de Origem</h1>
+    Insira seu páis de origem: <input type="text" name="pais" id="pais">
+    <input type="button" value="Analisar" onclick="exibir()">
+    <div id="analise">
+
+    </div>
+
+    <script>
+        function exibir() {
+            var origem = document.querySelector('input#pais')
+            var analise = document.querySelector('div#analise')
+            var nacionalidade = (origem.value)
+
+            analise.innerHTML = `Você tem como país de origem: ${nacionalidade}`
+
+            if (nacionalidade == 'Brasil') {
+                analise.innerHTML += `<p>Você é cidadão</p>`
+            } else {
+                analise.innerHTML += `<p>Você é estrangeiro!</p>`   
+            }
+        }
+    </script>
+</body>
+
+</html>
